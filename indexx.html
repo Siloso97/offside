@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offside Store - Investimento em Franquia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #006400;
+            color: #ffffff;
+            text-align: center;
+            padding: 1em;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        .section-title {
+            color: #006400;
+            margin-top: 20px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #006400;
+            padding-bottom: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #cccccc;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+            color: #006400;
+        }
+        .footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #f0f0f0;
+            color: #666;
+            font-size: 0.9em;
+        }
+        .input-section {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #cccccc;
+        }
+        .input-section label, .input-section input {
+            font-size: 1em;
+            margin-right: 10px;
+        }
+        .result {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #006400;
+        }
+    </style>
+    <script>
+        function calcularLucro() {
+            const lojas = document.getElementById("numLojas").value;
+            const lucroPorLoja = 15585.00; // Estimativa de lucro por loja
+            const lucroTotal = lojas * lucroPorLoja;
+            document.getElementById("resultado").innerText = 
+                "Previsão de Lucro Total: R$ " + lucroTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Offside Store</h1>
+        <p>Uma oportunidade de investimento em franquia no setor esportivo.</p>
+    </header>
+
+    <div class="container">
+        <div class="section-title">Funcionários e Salários</div>
+        <table>
+            <tr><th>Função</th><th>Salário (R$)</th></tr>
+            <tr><td>Vendedor</td><td>1.800,00</td></tr>
+            <tr><td>Vendedor</td><td>1.800,00</td></tr>
+            <tr><td>Caixa</td><td>1.700,00</td></tr>
+            <tr><td>Estoque</td><td>1.700,00</td></tr>
+        </table>
+
+        <div class="section-title">Produtos e Preços</div>
+        <table>
+            <tr><th>Produto</th><th>Valor (R$)</th><th>Frequência</th></tr>
+            <tr><td>Camisa Torcedor</td><td>350,00</td><td>10</td></tr>
+            <tr><td>Camisa Jogador</td><td>430,00</td><td>8</td></tr>
+            <tr><td>Chuteira Society</td><td>350,00</td><td>4</td></tr>
+            <tr><td>Tênis de Futsal</td><td>285,00</td><td>12</td></tr>
+            <tr><td>Chuteira Campo</td><td>460,00</td><td>3</td></tr>
+            <tr><td>Caneleira</td><td>25,00</td><td>9</td></tr>
+            <tr><td>Meião</td><td>20,00</td><td>7</td></tr>
+            <tr><td>Bola</td><td>120,00</td><td>10</td></tr>
+            <tr><td>Bola Campo</td><td>300,00</td><td>2</td></tr>
+            <tr><td>Bola Society</td><td>70,00</td><td>3</td></tr>
+            <tr><td>Bola Futsal</td><td>70,00</td><td>1</td></tr>
+        </table>
+
+        <div class="section-title">Aluguel e Outros Gastos</div>
+        <p>Área da Loja: 80m²</p>
+        <p>Valor Total do Aluguel: R$ 18.700,00</p>
+        <p>Gastos Mensais Totais: R$ 25.700,00</p>
+        <p>Lucro (Estimativa Inicial): R$ 15.585,00</p>
+
+        <div class="input-section">
+            <label for="numLojas">Digite a quantidade de lojas:</label>
+            <input type="number" id="numLojas" min="1" oninput="calcularLucro()" placeholder="Quantidade de lojas">
+            <div class="result" id="resultado">Previsão de Lucro Total: R$ 0,00</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Offside Store. Todos os direitos reservados.</p>
+    </div>
+</body>
+</html>
