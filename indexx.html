@@ -5,87 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Offside Store - Investimento em Franquia</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #006400;
-            color: #ffffff;
-            text-align: center;
-            padding: 1em;
-        }
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-        }
-        .section-title {
-            color: #006400;
-            margin-top: 20px;
-            font-size: 1.5em;
-            border-bottom: 2px solid #006400;
-            padding-bottom: 5px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #cccccc;
-            text-align: left;
-        }
-        th {
-            background-color: #f0f0f0;
-            color: #006400;
-        }
-        .footer {
-            text-align: center;
-            padding: 1em;
-            background-color: #f0f0f0;
-            color: #666;
-            font-size: 0.9em;
-        }
-        .input-section {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #f9f9f9;
-            border: 1px solid #cccccc;
-        }
-        .input-section label, .input-section input {
-            font-size: 1em;
-            margin-right: 10px;
-        }
-        .result {
-            margin-top: 10px;
-            font-size: 1.2em;
-            color: #006400;
-        }
+        body { font-family: Arial, sans-serif; color: #333; margin: 0; }
+        header { background-color: #006400; color: #fff; text-align: center; padding: 1em; }
+        .container { max-width: 800px; margin: auto; padding: 20px; }
+        h2 { color: #006400; border-bottom: 2px solid #006400; padding-bottom: 5px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 10px; border: 1px solid #ccc; }
+        th { background-color: #f0f0f0; color: #006400; }
+        .input-section { margin-top: 20px; padding: 10px; }
+        .result { font-size: 1.2em; color: #006400; margin-top: 10px; }
     </style>
     <script>
         function calcularLucro() {
             const lojas = document.getElementById("numLojas").value;
-            const lucroPorLoja = 15585.00; // Estimativa de lucro por loja
-            const lucroTotal = lojas * lucroPorLoja;
             document.getElementById("resultado").innerText = 
-                "Previsão de Lucro Total: R$ " + lucroTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                "Previsão de Lucro Total: R$ " + (lojas * 15585).toLocaleString('pt-BR', { minimumFractionDigits: 2 });
         }
     </script>
 </head>
 <body>
     <header>
         <h1>Offside Store</h1>
-        <p>Uma oportunidade de investimento em franquia no setor esportivo.</p>
+        <p>Oportunidade de investimento em franquia no setor esportivo</p>
     </header>
 
     <div class="container">
-        <div class="section-title">Funcionários e Salários</div>
+        <h2>Funcionários e Salários</h2>
         <table>
             <tr><th>Função</th><th>Salário (R$)</th></tr>
             <tr><td>Vendedor</td><td>1.800,00</td></tr>
@@ -94,7 +39,7 @@
             <tr><td>Estoque</td><td>1.700,00</td></tr>
         </table>
 
-        <div class="section-title">Produtos e Preços</div>
+        <h2>Produtos e Preços</h2>
         <table>
             <tr><th>Produto</th><th>Valor (R$)</th><th>Frequência</th></tr>
             <tr><td>Camisa Torcedor</td><td>350,00</td><td>10</td></tr>
@@ -110,21 +55,17 @@
             <tr><td>Bola Futsal</td><td>70,00</td><td>1</td></tr>
         </table>
 
-        <div class="section-title">Aluguel e Outros Gastos</div>
+        <h2>Aluguel e Outros Gastos</h2>
         <p>Área da Loja: 80m²</p>
-        <p>Valor Total do Aluguel: R$ 18.700,00</p>
-        <p>Gastos Mensais Totais: R$ 25.700,00</p>
-        <p>Lucro (Estimativa Inicial): R$ 15.585,00</p>
+        <p>Aluguel: R$ 18.700,00</p>
+        <p>Gastos Mensais: R$ 25.700,00</p>
+        <p>Lucro Estimado por Loja: R$ 15.585,00</p>
 
         <div class="input-section">
-            <label for="numLojas">Digite a quantidade de lojas:</label>
-            <input type="number" id="numLojas" min="1" oninput="calcularLucro()" placeholder="Quantidade de lojas">
+            <label>Quantidade de Lojas:</label>
+            <input type="number" id="numLojas" min="1" oninput="calcularLucro()">
             <div class="result" id="resultado">Previsão de Lucro Total: R$ 0,00</div>
         </div>
-    </div>
-
-    <div class="footer">
-        <p>&copy; 2024 Offside Store. Todos os direitos reservados.</p>
     </div>
 </body>
 </html>
